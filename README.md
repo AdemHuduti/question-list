@@ -1,55 +1,44 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template sets up a minimal React application with TypeScript, integrated with Vite for fast development, Hot Module Replacement (HMR), and some basic ESLint rules to maintain code quality.
 
-Currently, two official plugins are available:
+## Features:
+- **React** with **TypeScript** for a type-safe development experience.
+- **Vite** for fast builds and HMR (Hot Module Replacement).
+- Basic **ESLint** rules for ensuring clean and consistent code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to get the project up and running locally.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Install Dependencies
+First, install the necessary dependencies by running the following command in your terminal:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Run the Development Server
+After installation, you can start the development server. Navigate to http://localhost:3000 in your browser to view the app.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
-# question-list
+
+### Running Tests
+This project includes tests to verify the functionality of the components and logic. To run the tests, execute the following command:
+
+```bash
+npm test
+```
+
+
+### Test Setup:
+
+- The tests are set up with **Jest** for testing the components and functionality.
+- The tests use **mimic data** for simplicity and to verify basic logic.
+- In real-world applications, I would use **Mock Service Worker (MSW)** to:
+  - Mock API calls.
+  - Simulate network requests in a more realistic way.
+  - Handle server responses during testing for integration and unit tests.
