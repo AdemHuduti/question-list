@@ -15,10 +15,9 @@ interface Props {
   question: string;
   answer: string;
   num: number;
-  showAllAnswers: boolean;
 }
 
-export function Question({ question, answer, num, showAllAnswers }: Props) {
+export function Question({ question, answer, num }: Props) {
   const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -42,13 +41,13 @@ export function Question({ question, answer, num, showAllAnswers }: Props) {
       <h3 className="question-title">{num + 1 + ")"} {question}</h3>
       <p className="bold">
         {
-          showAllAnswers ? answer : showAnswer && answer
+          showAnswer && answer
         }
       </p>
       {
         isConfirmationVisible && <Confirmation message={"Do you want to show answer ?"} accept={accept} decline={decline} />
       }
-      <button className="btn" onClick={handleShowAnswer} disabled={isConfirmationVisible || showAllAnswers}>Show answer</button>
+      <button className="btn" onClick={handleShowAnswer} disabled={isConfirmationVisible}>Show answer</button>
 
     </section>
   )

@@ -36,8 +36,7 @@ npm test
 
 ### Test Setup:
 
-- The tests are set up with **Jest** for testing the components and functionality.
-- The tests use **mimic data** for simplicity and to verify basic logic.
+- The tests are set up with **Jest, testing-library/react and vitest** for testing the components and functionality.
 - In real-world applications, I would use **Mock Service Worker (MSW)** to:
   - Mock API calls.
   - Simulate network requests in a more realistic way.
